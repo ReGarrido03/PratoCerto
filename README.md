@@ -34,7 +34,9 @@ A proposta se conecta principalmente ao Objetivo de Desenvolvimento Sustentável
 
 Antes de escrever qualquer linha de código, desenhamos o protótipo em formato de wireframe de baixa fidelidade, sem cores ou imagens definitivas, para que a discussão se concentrasse na estrutura da informação e no fluxo de uso.
 
-![Wireframe do Prato Certo](imagens/wireframe.png)
+<img width="862" height="795" alt="Captura de tela 2026-08-25 204311" src="https://github.com/user-attachments/assets/65a96686-4beb-40e0-a4ed-1dfb0231d9d6" />
+<img width="860" height="726" alt="Captura de tela 2026-08-25 204349" src="https://github.com/user-attachments/assets/ae5b90ee-b052-4479-9150-bf4261063bb0" />
+<img width="860" height="357" alt="Captura de tela 2026-08-25 204410" src="https://github.com/user-attachments/assets/b9ad18a4-1713-4913-800a-3bc98c30352f" />
 
 A tela foi organizada em duas colunas. À esquerda ficam os filtros, com a seleção de ingredientes, o custo máximo por porção, o tempo de preparo e o tipo de refeição, e à direita a listagem de receitas em linhas horizontais, cada uma com miniatura, descrição breve, selos informativos e o custo por porção em destaque. Ao clicar em uma receita, um painel se abre sobre a listagem trazendo o modo de preparo, a lista de ingredientes e a calculadora de porções.
 
