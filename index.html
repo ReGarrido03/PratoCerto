@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Receitas nutritivas e de baixo custo a partir dos ingredientes que você já tem em casa.">
+    <meta name="author" content="Prato Certo">
+    <title>Prato Certo — receitas baratas com o que você tem em casa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ==================== CABEÇALHO ==================== -->
+    <header id="topo">
+        <a href="index.html" id="marca">
+            <img src="imagens/logo.png" alt="Logotipo do Prato Certo">
+            <h1>Prato Certo</h1>
+        </a>
+
+        <search>
+            <form id="busca-topo" role="search">
+                <label for="campo-busca">Buscar</label>
+                <input type="search" id="campo-busca" name="busca" placeholder="Buscar receita ou ingrediente">
+                <button type="submit">Buscar</button>
+            </form>
+        </search>
+
+        <nav id="menu-principal" aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html" aria-current="page">Receitas</a></li>
+                <li><a href="sobre.html#como-funciona">Como funciona</a></li>
+                <li><a href="sobre.html#projeto">O projeto</a></li>
+                <li><a href="enviar.html">Enviar receita</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ---------- Apresentação ---------- -->
+        <section id="apresentacao">
+            <h2>Descubra o que dá para cozinhar com o que já está na sua cozinha</h2>
+            <p>
+                Marque os ingredientes disponíveis e veja receitas nutritivas com o custo
+                por porção calculado na hora.
+            </p>
+            <a href="#filtros" class="botao">Começar pelo filtro</a>
+
+            <dl id="numeros">
+                <dt>receitas no acervo</dt>
+                <dd>48</dd>
+
+                <dt>custo médio por porção</dt>
+                <dd>R$ 3,10</dd>
+
+                <dt>acesso livre, sem cadastro</dt>
+                <dd>100%</dd>
+            </dl>
+        </section>
+
+        <!-- ---------- Busca de receitas ---------- -->
+        <section id="area-receitas">
+
+            <!-- Filtros -->
+            <aside id="filtros" aria-label="Filtros de busca">
+                <h2>Filtrar receitas</h2>
+
+                <form id="form-filtros">
+
+                    <fieldset id="grupo-ingredientes">
+                        <legend>O que você tem em casa</legend>
+                        <p>
+                            <input type="checkbox" id="ing-arroz" name="ingrediente" value="arroz">
+                            <label for="ing-arroz">arroz</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ing-ovo" name="ingrediente" value="ovo">
+                            <label for="ing-ovo">ovo</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ing-cebola" name="ingrediente" value="cebola">
+                            <label for="ing-cebola">cebola</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ing-feijao" name="ingrediente" value="feijao">
+                            <label for="ing-feijao">feijão</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ing-batata" name="ingrediente" value="batata">
+                            <label for="ing-batata">batata</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ing-cenoura" name="ingrediente" value="cenoura">
+                            <label for="ing-cenoura">cenoura</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ing-macarrao" name="ingrediente" value="macarrao">
+                            <label for="ing-macarrao">macarrão</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ing-tomate" name="ingrediente" value="tomate">
+                            <label for="ing-tomate">tomate</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ing-frango" name="ingrediente" value="frango">
+                            <label for="ing-frango">frango</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ing-leite" name="ingrediente" value="leite">
+                            <label for="ing-leite">leite</label>
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="grupo-custo">
+                        <legend>Custo máximo por porção</legend>
+                        <label for="custo-maximo">
+                            Até <output id="valor-custo" for="custo-maximo">R$ 5,50</output>
+                        </label>
+                        <input type="range" id="custo-maximo" name="custo" min="1" max="10" step="0.5" value="5.5">
+                    </fieldset>
+
+                    <fieldset id="grupo-tempo">
+                        <legend>Tempo de preparo</legend>
+                        <p>
+                            <input type="checkbox" id="tempo-curto" name="tempo" value="20">
+                            <label for="tempo-curto">até 20 minutos</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="tempo-medio" name="tempo" value="40">
+                            <label for="tempo-medio">de 20 a 40 minutos</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="tempo-longo" name="tempo" value="41">
+                            <label for="tempo-longo">mais de 40 minutos</label>
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="grupo-refeicao">
+                        <legend>Tipo de refeição</legend>
+                        <p>
+                            <input type="checkbox" id="ref-cafe" name="refeicao" value="cafe">
+                            <label for="ref-cafe">café da manhã</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ref-almoco" name="refeicao" value="almoco">
+                            <label for="ref-almoco">almoço e jantar</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="ref-lanche" name="refeicao" value="lanche">
+                            <label for="ref-lanche">lanche</label>
+                        </p>
+                    </fieldset>
+
+                    <button type="reset" id="limpar-filtros">Limpar filtros</button>
+
+                </form>
+            </aside>
+
+            <!-- Resultados -->
+            <section id="receitas" aria-label="Resultados da busca">
+
+                <header id="cabecalho-resultados">
+                    <h2>Receitas encontradas</h2>
+                    <p><output id="contador-resultados">8</output> resultados para os filtros selecionados</p>
+                </header>
+
+                <menu id="ordenacao">
+                    <li><button type="button" data-ordem="preco" aria-pressed="true">menor preço</button></li>
+                    <li><button type="button" data-ordem="tempo" aria-pressed="false">mais rápidas</button></li>
+                    <li><button type="button" data-ordem="recentes" aria-pressed="false">mais recentes</button></li>
+                </menu>
+
+                <!-- As receitas serão geradas por JavaScript nesta lista -->
+                <ul id="lista-receitas">
+
+                    <li>
+                        <article class="receita">
+                            <figure>
+                                <img src="imagens/arroz-de-forno.jpg" alt="Travessa de arroz de forno com ovo">
+                            </figure>
+
+                            <section class="descricao">
+                                <h3>Arroz de forno com ovo</h3>
+                                <p>
+                                    Aproveita o arroz que sobrou, rende bastante e vai ao forno
+                                    em uma única travessa.
+                                </p>
+                                <ul class="selos">
+                                    <li><time datetime="PT25M">25 min</time></li>
+                                    <li>4 porções</li>
+                                    <li>fonte de proteína</li>
+                                </ul>
+                            </section>
+
+                            <footer class="valor">
+                                <p><strong>R$ 2,50</strong> <small>por porção</small></p>
+                                <button type="button" class="abrir-receita" data-receita="1">Ver receita</button>
+                            </footer>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article class="receita">
+                            <figure>
+                                <img src="imagens/bolinho-de-arroz.jpg" alt="Bolinhos de arroz assados em uma assadeira">
+                            </figure>
+
+                            <section class="descricao">
+                                <h3>Bolinho de arroz assado</h3>
+                                <p>
+                                    Versão assada, mais barata e leve que a frita, boa para
+                                    lanche ou acompanhamento.
+                                </p>
+                                <ul class="selos">
+                                    <li><time datetime="PT30M">30 min</time></li>
+                                    <li>6 porções</li>
+                                    <li>sem fritura</li>
+                                </ul>
+                            </section>
+
+                            <footer class="valor">
+                                <p><strong>R$ 3,20</strong> <small>por porção</small></p>
+                                <button type="button" class="abrir-receita" data-receita="2">Ver receita</button>
+                            </footer>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article class="receita">
+                            <figure>
+                                <img src="imagens/omelete-de-forno.jpg" alt="Omelete de forno cortada em fatias">
+                            </figure>
+
+                            <section class="descricao">
+                                <h3>Omelete de forno com cebola</h3>
+                                <p>
+                                    Aceita qualquer legume que estiver sobrando na geladeira
+                                    e fica pronta rápido.
+                                </p>
+                                <ul class="selos">
+                                    <li><time datetime="PT20M">20 min</time></li>
+                                    <li>3 porções</li>
+                                    <li>fonte de proteína</li>
+                                </ul>
+                            </section>
+
+                            <footer class="valor">
+                                <p><strong>R$ 3,80</strong> <small>por porção</small></p>
+                                <button type="button" class="abrir-receita" data-receita="3">Ver receita</button>
+                            </footer>
+                        </article>
+                    </li>
+
+                </ul>
+
+            </section>
+
+        </section>
+
+        <!-- ==================== POP-UP DA RECEITA ==================== -->
+        <!-- Fica oculto até o usuário clicar em "Ver receita" -->
+        <dialog id="painel-receita" aria-labelledby="titulo-receita">
+            <article>
+
+                <header id="cabecalho-receita">
+                    <h2 id="titulo-receita">Arroz de forno com ovo</h2>
+                    <button type="button" id="fechar-receita" aria-label="Fechar receita">&times;</button>
+                </header>
+
+                <section id="preparo">
+                    <figure>
+                        <img src="imagens/arroz-de-forno.jpg" alt="Travessa de arroz de forno com ovo">
+                        <figcaption>Rendimento base de quatro porções.</figcaption>
+                    </figure>
+
+                    <h3>Modo de preparo</h3>
+                    <ol>
+                        <li>Aqueça o forno e unte um refratário.</li>
+                        <li>Refogue a cebola picada até dourar.</li>
+                        <li>Misture o arroz cozido e os ovos batidos.</li>
+                        <li>Leve ao forno por <time datetime="PT20M">20 minutos</time>.</li>
+                    </ol>
+                </section>
+
+                <aside id="lateral-receita" aria-label="Porções e ingredientes">
+
+                    <section id="calculadora">
+                        <h3>Quantas porções?</h3>
+
+                        <p id="contador-porcoes">
+                            <button type="button" id="diminuir" aria-label="Diminuir porções">&minus;</button>
+                            <output id="porcoes" for="diminuir aumentar">4</output>
+                            <button type="button" id="aumentar" aria-label="Aumentar porções">+</button>
+                        </p>
+
+                        <dl id="custos">
+                            <dt>custo estimado</dt>
+                            <dd><output id="custo-total">R$ 10,00</output></dd>
+
+                            <dt>por porção</dt>
+                            <dd><output id="custo-porcao">R$ 2,50</output></dd>
+                        </dl>
+                    </section>
+
+                    <section id="ingredientes">
+                        <h3>Ingredientes</h3>
+                        <ul id="lista-ingredientes">
+                            <li>
+                                <span>arroz cozido</span>
+                                <data value="3">3 xíc.</data>
+                            </li>
+                            <li>
+                                <span>ovos</span>
+                                <data value="4">4 un.</data>
+                            </li>
+                            <li>
+                                <span>cebola média</span>
+                                <data value="1">1 un.</data>
+                            </li>
+                            <li>
+                                <span>óleo</span>
+                                <data value="1">1 col.</data>
+                            </li>
+                        </ul>
+                    </section>
+
+                </aside>
+
+            </article>
+        </dialog>
+
+    </main>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer id="rodape">
+        <p>
+            Prato Certo — projeto extensionista ·
+            <a href="mailto:contato@pratocerto.com.br">contato@pratocerto.com.br</a>
+        </p>
+
+        <ul id="redes">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">YouTube</a></li>
+        </ul>
+
+        <p><small>&copy; 2026 Prato Certo</small></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
