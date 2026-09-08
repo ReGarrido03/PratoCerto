@@ -15,7 +15,7 @@
     <!-- ==================== CABEÇALHO ==================== -->
     <header id="topo">
         <a href="index.html" id="marca">
-            <img src="imagens/logo.png" alt="Logotipo do Prato Certo">
+            <img src="imagens/logo.svg" alt="Logotipo do Prato Certo">
             <h1>Prato Certo</h1>
         </a>
 
@@ -31,7 +31,6 @@
             <ul>
                 <li><a href="index.html" aria-current="page">Receitas</a></li>
                 <li><a href="sobre.html#como-funciona">Como funciona</a></li>
-                <li><a href="sobre.html#projeto">O projeto</a></li>
                 <li><a href="enviar.html">Enviar receita</a></li>
             </ul>
         </nav>
@@ -58,6 +57,16 @@
                 <dt>acesso livre, sem cadastro</dt>
                 <dd>100%</dd>
             </dl>
+
+            <article id="destaque">
+                <figure>
+                    <img src="imagens/bolinho-de-arroz.jpg" alt="Bolinhos de arroz assados em uma assadeira">
+                </figure>
+                <p class="etiqueta">Receita da semana</p>
+                <h3>Bolinho de arroz assado</h3>
+                <button type="button" class="abrir-receita" data-receita="2"
+                        command="show-modal" commandfor="painel-receita">Ver receita</button>
+            </article>
         </section>
 
         <!-- ---------- Busca de receitas ---------- -->
@@ -196,7 +205,8 @@
 
                             <footer class="valor">
                                 <p><strong>R$ 2,50</strong> <small>por porção</small></p>
-                                <button type="button" class="abrir-receita" data-receita="1">Ver receita</button>
+                                <button type="button" class="abrir-receita" data-receita="1"
+                                        command="show-modal" commandfor="painel-receita">Ver receita</button>
                             </footer>
                         </article>
                     </li>
@@ -222,7 +232,8 @@
 
                             <footer class="valor">
                                 <p><strong>R$ 3,20</strong> <small>por porção</small></p>
-                                <button type="button" class="abrir-receita" data-receita="2">Ver receita</button>
+                                <button type="button" class="abrir-receita" data-receita="2"
+                                        command="show-modal" commandfor="painel-receita">Ver receita</button>
                             </footer>
                         </article>
                     </li>
@@ -248,7 +259,8 @@
 
                             <footer class="valor">
                                 <p><strong>R$ 3,80</strong> <small>por porção</small></p>
-                                <button type="button" class="abrir-receita" data-receita="3">Ver receita</button>
+                                <button type="button" class="abrir-receita" data-receita="3"
+                                        command="show-modal" commandfor="painel-receita">Ver receita</button>
                             </footer>
                         </article>
                     </li>
@@ -266,7 +278,8 @@
 
                 <header id="cabecalho-receita">
                     <h2 id="titulo-receita">Arroz de forno com ovo</h2>
-                    <button type="button" id="fechar-receita" aria-label="Fechar receita">&times;</button>
+                    <button type="button" id="fechar-receita" aria-label="Fechar receita"
+                            command="close" commandfor="painel-receita">&times;</button>
                 </header>
 
                 <section id="preparo">
@@ -335,17 +348,7 @@
 
     <!-- ==================== RODAPÉ ==================== -->
     <footer id="rodape">
-        <p>
-            Prato Certo — projeto extensionista ·
-            <a href="mailto:contato@pratocerto.com.br">contato@pratocerto.com.br</a>
-        </p>
-
-        <ul id="redes">
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">YouTube</a></li>
-        </ul>
-
+        <p>Prato Certo — projeto extensionista</p>
         <p><small>&copy; 2026 Prato Certo</small></p>
     </footer>
 
