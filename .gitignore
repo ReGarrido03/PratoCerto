@@ -1,0 +1,25 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editores/IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependências (caso ferramentas de build/lint sejam adicionadas)
+node_modules/
+
+# Variáveis de ambiente
+.env
+.env.local
+
+# Arquivos temporários
+*.tmp
+*~
